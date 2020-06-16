@@ -2,15 +2,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>WuJingcheng 的个人博客</title>
-    <link>https://wu_jingcheng.github.io</link>
-    <atom:link href="https://wu_jingcheng.github.io/rss.xml" rel="self" type="application/rss+xml"/>
+    <link>https://wu-jingcheng.github.io</link>
+    <atom:link href="https://wu-jingcheng.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <description>记录精彩的程序人生</description>
     <generator>Solo, v4.1.0, https://solo.b3log.org</generator>
-    <lastBuildDate>Mon, 15 Jun 2020 14:21:35 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2020 09:05:16 +0800</lastBuildDate>
     <language>zh-cn</language>
     <item>
       <title>世界，你好！</title>
-      <link>https://wu_jingcheng.github.io/hello-solo</link>
+      <link>https://wu-jingcheng.github.io/hello-solo</link>
       <description><![CDATA[<p><img src="https://b3logfile.com/bing/20181024.jpg?imageView2/1/w/1280/h/720/interlace/1/q/100" alt=""></p>
 <p>Solo 博客系统已经初始化完毕，可在管理后台 - 工具 - 偏好设定中调整更多细节设置。如果需要导入已有博客文章，请参考文档 <a href="https://hacpai.com/article/1498490209748" target="_blank">Hexo/Jekyll/Markdown 文件导入</a>。</p>
 <p>对了，出于安全考虑请尽快完成如下操作：</p>
@@ -21,7 +21,7 @@
 </ol>
 <p>最后，如果你觉得 Solo 很赞，请到<a href="https://github.com/88250/solo" target="_blank">项目主页</a>给颗星鼓励一下 ❤️</p>]]></description>
       <author>WuJingcheng</author>
-      <guid>https://wu_jingcheng.github.io/hello-solo</guid>
+      <guid>https://wu-jingcheng.github.io/hello-solo</guid>
       <category>Solo</category>
       <pubDate>Sun, 14 Jun 2020 22:31:43 +0800</pubDate>
     </item>
