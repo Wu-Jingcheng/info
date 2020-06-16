@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>WuJingcheng 的个人博客</title>
+    <title>Jingcheng Wu</title>
     <link>https://wu-jingcheng.github.io</link>
     <atom:link href="https://wu-jingcheng.github.io/rss.xml" rel="self" type="application/rss+xml"/>
-    <description>记录精彩的程序人生</description>
+    <description>For AI &gt; For CV &gt; For NLP &gt; For a better world</description>
     <generator>Solo, v4.1.0, https://solo.b3log.org</generator>
-    <lastBuildDate>Tue, 16 Jun 2020 09:05:16 +0800</lastBuildDate>
-    <language>zh-cn</language>
+    <lastBuildDate>Tue, 16 Jun 2020 09:34:20 +0800</lastBuildDate>
+    <language>en-us</language>
     <item>
       <title>世界，你好！</title>
       <link>https://wu-jingcheng.github.io/hello-solo</link>
