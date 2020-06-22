@@ -3,10 +3,10 @@
     "theme_color": "#1fb5ad",
     "background_color": "#f1f2f7",
     "display": "standalone",
-    "name": "WuJingcheng 的个人博客",
+    "name": "Jingcheng Wu",
     "start_url": ".",
-    "description": "记录精彩的程序人生",
-    "short_name": "WuJingcheng 的个人博客",
+    "description": "For AI > For CV > For NLP > For a better world",
+    "short_name": "Jingcheng Wu",
     "icons": [
         {
             "sizes": "48x48",
