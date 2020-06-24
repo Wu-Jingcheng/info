@@ -6,18 +6,17 @@
     <atom:link href="https://wu-jingcheng.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <description>For AI &gt; For CV &gt; For NLP &gt; For a better world</description>
     <generator>Solo, v4.1.0, https://solo.b3log.org</generator>
-    <lastBuildDate>Tue, 23 Jun 2020 17:41:30 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2020 22:37:53 +0800</lastBuildDate>
     <language>en-us</language>
     <item>
-      <title>LeetCode repository</title>
-      <link>https://wu-jingcheng.github.io/articles/2020/06/23/1592905150573.html</link>
+      <title>关于我自己</title>
+      <link>https://wu-jingcheng.github.io/articles/2020/06/24/1593006366422.html</link>
       <description/>
       <author>WuJingcheng</author>
-      <guid>https://wu-jingcheng.github.io/articles/2020/06/23/1592905150573.html</guid>
-      <category>LeetCode</category>
-      <category>Java</category>
-      <category>Coding</category>
-      <pubDate>Tue, 23 Jun 2020 17:39:10 +0800</pubDate>
+      <guid>https://wu-jingcheng.github.io/articles/2020/06/24/1593006366422.html</guid>
+      <category>Chinese</category>
+      <category>Personal</category>
+      <pubDate>Wed, 24 Jun 2020 22:33:03 +0800</pubDate>
     </item>
     <item>
       <title>15513 Cachelab</title>
@@ -25,10 +24,23 @@
       <description><![CDATA[<p>Cachelab solution brief descriptions. (subject to academic integrity policy)</p>]]></description>
       <author>WuJingcheng</author>
       <guid>https://wu-jingcheng.github.io/articles/2020/06/23/1592844437541.html</guid>
+      <category>C</category>
+      <category>English</category>
       <category>15513</category>
       <category>CMU</category>
-      <category>C</category>
-      <pubDate>Tue, 23 Jun 2020 17:24:18 +0800</pubDate>
+      <pubDate>Wed, 24 Jun 2020 20:57:32 +0800</pubDate>
+    </item>
+    <item>
+      <title>LeetCode repository</title>
+      <link>https://wu-jingcheng.github.io/articles/2020/06/23/1592905150573.html</link>
+      <description/>
+      <author>WuJingcheng</author>
+      <guid>https://wu-jingcheng.github.io/articles/2020/06/23/1592905150573.html</guid>
+      <category>English</category>
+      <category>Coding</category>
+      <category>Java</category>
+      <category>LeetCode</category>
+      <pubDate>Wed, 24 Jun 2020 20:57:23 +0800</pubDate>
     </item>
   </channel>
 </rss>
