@@ -6,8 +6,20 @@
     <atom:link href="https://wu-jingcheng.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <description>contact: wu_jingcheng@qq.com</description>
     <generator>Solo, v4.1.0, https://solo.b3log.org</generator>
-    <lastBuildDate>Mon, 29 Jun 2020 01:41:26 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jun 2020 22:26:00 +0800</lastBuildDate>
     <language>en-us</language>
+    <item>
+      <title>15513 Malloclab</title>
+      <link>https://wu-jingcheng.github.io/articles/2020/06/29/1593405379989.html</link>
+      <description><![CDATA[<p>Malloclab task summay. Any disclosed details are subject to academic integrity policy.</p>]]></description>
+      <author>WuJingcheng</author>
+      <guid>https://wu-jingcheng.github.io/articles/2020/06/29/1593405379989.html</guid>
+      <category>English</category>
+      <category>15513</category>
+      <category>CMU</category>
+      <category>C</category>
+      <pubDate>Mon, 29 Jun 2020 22:24:42 +0800</pubDate>
+    </item>
     <item>
       <title>本科四年(bksn)这回事</title>
       <link>https://wu-jingcheng.github.io/articles/2020/06/27/1593270891364.html</link>
@@ -46,10 +58,10 @@
       <description/>
       <author>WuJingcheng</author>
       <guid>https://wu-jingcheng.github.io/articles/2020/06/23/1592905150573.html</guid>
-      <category>LeetCode</category>
-      <category>Coding</category>
       <category>English</category>
+      <category>LeetCode</category>
       <category>Java</category>
+      <category>Coding</category>
       <pubDate>Wed, 24 Jun 2020 20:57:23 +0800</pubDate>
     </item>
   </channel>
