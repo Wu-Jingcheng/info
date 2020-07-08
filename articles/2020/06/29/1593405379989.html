@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>15513 Malloclab - Jingcheng Wu</title><meta name="description" content="Malloclab task summay. Any disclosed details are subject to academic integrity policy."/><meta property="og:description" content="Malloclab task summay. Any disclosed details are subject to academic integrity policy."/>    <meta name="keywords" content="AI, NLP, CV, Industrial, Personal, CMU, UESTC"/><link rel="dns-prefetch" href="https://wu-jingcheng.github.io"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://wu-jingcheng.github.io"><link rel="icon" type="image/png" href="https://static.b3log.org/images/brand/solo-32.png"/><link rel="apple-touch-icon" href="https://static.b3log.org/images/brand/solo-32.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.b3log.org/images/brand/solo-32.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="en_US"/><meta property="og:title" content="15513 Malloclab - Jingcheng Wu"/><meta property="og:site_name" content="Jingcheng Wu"/><meta property="og:url"      content="https://wu-jingcheng.github.io/articles/2020/06/29/1593405379989.html?"/><meta property="og:image" content="https://static.b3log.org/images/brand/solo-32.png"/><link rel="search" type="application/opensearchdescription+xml" title="15513 Malloclab - Jingcheng Wu" href="/opensearch.xml"><link href="https://wu-jingcheng.github.io/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://wu-jingcheng.github.io/manifest.json">        <link rel="canonical" href="https://wu-jingcheng.github.io/articles/2020/06/29/1593405379989.html">        <link rel="stylesheet"
-              href="https://wu-jingcheng.github.io/skins/nijigen/css/base.css?1593439561167"/>
+              href="https://wu-jingcheng.github.io/skins/nijigen/css/base.css?1594218092421"/>
             <link rel="prev" title="本科四年(bksn)这回事" href="https://wu-jingcheng.github.io/articles/2020/06/27/1593270891364.html">
     </head>
 <body>
@@ -72,8 +72,8 @@
                 <div class="item item--active">
                     <time class="vditor-tooltipped vditor-tooltipped__n item__date"
                           aria-label="2020">
-                        06
-                        <span class="item__day">29</span>
+                        07
+                        <span class="item__day">08</span>
                     </time>
 
                     <h2 class="item__title">
@@ -84,7 +84,7 @@
 
                     <div class="item__date--m fn__none">
                         <i class="icon__date"></i>
-                        2020-06-29
+                        2020-07-08
                     </div>
 
                     <div class="ft__center">
@@ -127,15 +127,78 @@
 </ul>
 </blockquote>
 <p>Therefore, this page would only discuss the lab and my solution in a brief and a rather vague way.</p>
-<h2 id="toc_h2_2">Tasks</h2>
-<p>The whole writeup is given in a very ambiguous way. Therefore, the primary thing to do is to figure out what are our real tasks.</p>
+<h2 id="toc_h2_2">Overview</h2>
+<p><strong>The overall size of the script we are working on eventually goes up to ~1170 lines</strong></p>
+<p>Malloclab can be divided into to 2 subtasks, which are marked as the checkpoint and the final. The basic idea is: we need to design allocators that have good enough performance in both utilizations and throughput. The full-score benchmarks for the checkpoint and the final are listed as follows:</p>
+<table>
+<thead>
+<tr><th align="center">Phase</th><th align="center">Utilizations</th><th align="center">Throughput</th></tr>
+</thead>
+<tbody>
+<tr><td align="center">Checkpoint</td><td align="center">58%</td><td align="center">80%</td></tr>
+<tr><td align="center">Final</td><td align="center">74%</td><td align="center">90%</td></tr>
+</tbody>
+</table>
+<p>A starter code, which has all implementations aside from block coalescing to realize an implicit free list allocator, is given. Basically, our task is to make it into an explicit free list allocator and then a segregated free list allocator to survive the checkpoint. Based on the checkpoint result, we are supposed to make some improvements to increase utilizations while maintaining a relatively high thru.</p>
+<p>Anyway, I survived. And there are some funny points.</p>
+<p>At the checkpoint, actually I didn't have full scores because of relatively low util, which is abnormal. After the checkpoint (ends up with 91.4 scores), I carefully looked into the code and debugged with a method named mm_checkheap(__LINE__), which is a heap checker to spot inconsistensies within the heap from different levels. My observation was that the free block counts from heap traversal and free lists are not matched. Eventually, I found out that the cause is that I set a improper if statement for mm_init(). My preliminary design is: mm_init() called when all list roots are null, which means free lists are empty. However, it is possible that a heap space has been intilized but run out of and left empty free lists. Hence, the init method is overly used and prologue/epilogue take up some space and lowers util.</p>
+<p>At the final, there are more stories.</p>
+<p>To earn full scores in the final, we are supposed to realize following strategies step by step.</p>
 <ol>
-<li><strong>Autograding</strong>: We are supposed to go beyond 58% ratio to win all autograding scores at the checkpoint phase.</li>
+<li>Eliminate footers of allocated block.</li>
+<li>Decrease min block size from 32 to 16 bytes. To do so, we need to eliminate prev field and footer in 16-byte blocks.</li>
+<li>(Optional) Compress headers. Actually after step 2, we are almost there and thereby can use fine tune to achieve it. In my case, I fine tuned the find fit strategy from first fit to better fit and expanded the extendsize each we request new heap space over chunksize (more precisely, 5*allocated_size).</li>
+</ol>
+<p>Things above altogether win full scores in the final.</p>
+<p>Some hints: cgdb, heap checker and beforehand careful design are important.</p>
+<p>Some funny things:</p>
+<p>When I eliminated the footers, found out that always garbled bytes error while reallocing. Turned out that adjustment in get_payload_size is missed out and the offset of the eliminated footer size wasn't counted during the calculatioin and overwrote bytes in other blocks.</p>
+<p>One stupid thing is: when I removed block footers for the first time, I removed all despite the size classes, which led to ~700 KOP thru.</p>
+<p>The basic design can be demonstrated by my file header comment:</p>
+<blockquote>
+<ul>
+<li>@file mm.c A heap space allocator.</li>
+<li>@brief A 64-bit struct-based segregated free list memory allocator</li>
+<li></li>
+<li>15-213: Introduction to Computer Systems</li>
+<li></li>
+<li>This allocator is the malloclab result in 15513.</li>
+<li></li>
+<li>The heap space is maintained mainly by a block-oriented strategy. The space</li>
+<li>is divided into blocks and their sizes, allocation status and the like are</li>
+<li>encoded in their header/footer.</li>
+<li></li>
+<li>The allocator implements a segregated free list. It has an array of 16</li>
+<li>pointers to free blocks. The 15 in front are roots of different size classes.</li>
+<li>The last is the tail of the 16-byte class.</li>
+<li></li>
+<li>For finding fit blocks strategy, it utilizes a <code>better</code> fit algorithm. The</li>
+<li>numbers of suitable blocks under scrutiny is confined by the const</li>
+<li><code>max_find</code>, which is 3 when I handed in.</li>
+<li></li>
+<li>In each free list, block placements follow address ordered principle.</li>
+<li></li>
+<li>One interesting design is that when we request heap extension size that is</li>
+<li>beyond the chunksize, the allocator makes the demand size quintuple to reduce</li>
+<li>future extension operations.</li>
+<li></li>
+<li>Have fun!</li>
+</ul>
+</blockquote>
+<h2 id="toc_h2_3">Dummy writeup (Readers may ignore, serves for personal use)</h2>
+<p>The whole writeup is given in a very ambiguous way. Therefore, the primary thing to do is to figure out what are our real tasks. For checkpoint, our handin is graded by:</p>
+<ol>
+<li><strong>Autograding</strong>: We are supposed to reach beyond 58% ratio in utilization and 80% in throughput to win all autograding scores at the checkpoint phase.</li>
 <li><strong>Heap Checker</strong>: This is primarily graded with the function <strong>mm_checkheap</strong>, which is used to check the consistency of the heap.</li>
 </ol>
-<h3 id="toc_h3_3">Checkpoint</h3>
+<h3 id="toc_h3_4">Some important concepts that are not covered in lectures</h3>
+<ul>
+<li>Chunk and chunk_size: chunk is a memory space and chunk size if predefined, by which we extend the heap space.</li>
+<li>Prologue footer and epilogue header: they are to pad the current chunk and the next chunk so that the blocks inside the chunks are able to be 16-byte aligned.</li>
+</ul>
+<h3 id="toc_h3_5">Checkpoint</h3>
 <p>Grading is based on the autograding of the allocator overhead vs. standard one and heap checker.</p>
-<h3 id="toc_h3_4">Final</h3>
+<h3 id="toc_h3_6">Final</h3>
 <p>...</p>
                     </div>
                 </div>
@@ -194,13 +257,19 @@
             <a href="#toc_h2_1">Beforehand Statement</a>
         </li>
         <li class="toc__h2">
-            <a href="#toc_h2_2">Tasks</a>
+            <a href="#toc_h2_2">Overview</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_3">Dummy writeup (Readers may ignore, serves for personal use)</a>
         </li>
         <li class="toc__h3">
-            <a href="#toc_h3_3">Checkpoint</a>
+            <a href="#toc_h3_4">Some important concepts that are not covered in lectures</a>
         </li>
         <li class="toc__h3">
-            <a href="#toc_h3_4">Final</a>
+            <a href="#toc_h3_5">Checkpoint</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_6">Final</a>
         </li>
 </ul>            </div>
         </div>
@@ -335,11 +404,11 @@ Received (double degrees) BEng of Electronic Information Engineering and BMgmt o
     showCodeBlockLn: false,
   }
 </script>
-<script type="text/javascript" src="https://wu-jingcheng.github.io/skins/nijigen/js/common.min.js?1593439561167" charset="utf-8"></script>
+<script type="text/javascript" src="https://wu-jingcheng.github.io/skins/nijigen/js/common.min.js?1594218092421" charset="utf-8"></script>
 
 
 <script type="text/javascript">
-    Util.addScript('https://wu-jingcheng.github.io/js/page.min.js?1593439561167', 'soloPageScript')
+    Util.addScript('https://wu-jingcheng.github.io/js/page.min.js?1594218092421', 'soloPageScript')
     var page = new Page({
         "commentContentCannotEmptyLabel": "Sorry, your content must be between 2 and 500 characters long.",
         "oId": "1593405379989",
@@ -357,4 +426,4 @@ Received (double degrees) BEng of Electronic Information Engineering and BMgmt o
 </body>
 </html>
 
-<!-- Generated by Latke (https://github.com/88250/latke) in 29ms, 2020/06/29 22:26:00 -->
+<!-- Generated by Latke (https://github.com/88250/latke) in 33ms, 2020/07/08 23:19:55 -->
