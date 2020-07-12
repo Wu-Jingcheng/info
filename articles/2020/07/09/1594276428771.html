@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>NLP/AI Notes - Jingcheng Wu(吴璟承)</title><meta name="description" content="Jingcheng Wu's personal blog."/><meta property="og:description" content="Jingcheng Wu's personal blog."/>    <meta name="keywords" content="Jingcheng Wu,blog,博客"/><link rel="dns-prefetch" href="https://wu-jingcheng.github.io"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://wu-jingcheng.github.io"><link rel="icon" type="image/png" href="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594539162951&di=33babfb907bc066d28e0922b8bd4f528&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201602%2F22%2F20160222235820_Yukxv.thumb.700_0.jpeg"/><link rel="apple-touch-icon" href="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594539162951&di=33babfb907bc066d28e0922b8bd4f528&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201602%2F22%2F20160222235820_Yukxv.thumb.700_0.jpeg"><link rel="shortcut icon" type="image/x-icon" href="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594539162951&di=33babfb907bc066d28e0922b8bd4f528&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201602%2F22%2F20160222235820_Yukxv.thumb.700_0.jpeg"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="en_US"/><meta property="og:title" content="NLP/AI Notes - Jingcheng Wu(吴璟承)"/><meta property="og:site_name" content="Jingcheng Wu(吴璟承)"/><meta property="og:url"      content="https://wu-jingcheng.github.io/articles/2020/07/09/1594276428771.html?"/><meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594539162951&di=33babfb907bc066d28e0922b8bd4f528&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201602%2F22%2F20160222235820_Yukxv.thumb.700_0.jpeg"/><link rel="search" type="application/opensearchdescription+xml" title="NLP/AI Notes - Jingcheng Wu(吴璟承)" href="/opensearch.xml"><link href="https://wu-jingcheng.github.io/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://wu-jingcheng.github.io/manifest.json">        <link rel="canonical" href="https://wu-jingcheng.github.io/articles/2020/07/09/1594276428771.html">        <link rel="stylesheet"
+              href="https://wu-jingcheng.github.io/skins/nijigen/css/base.css?1594524109972"/>
+            <link rel="prev" title="15513 Malloclab" href="https://wu-jingcheng.github.io/articles/2020/06/29/1593405379989.html">
+            <link rel="next" title="Chinese Word Segmentation" href="https://wu-jingcheng.github.io/articles/2020/07/12/1594534048569.html">
+    </head>
+<body>
+<div class="bg"></div>
+<div class="bg bg--1"></div>
+<div class="bg bg--2"></div>
+<div class="bg bg--3"></div>
+<div class="bg bg--4"></div>
+<div class="bg bg--5"></div>
+<header class="header">
+    <div class="header__wrap">
+        <a href="https://wu-jingcheng.github.io" rel="start" class="header__logo">
+            <i class="icon__home"></i> Jingcheng Wu(吴璟承)
+        </a>
+
+        <nav class="mobile__hidden header__nav">
+            <a href="https://wu-jingcheng.github.io/tags.html" rel="section">
+                <i class="icon__tags"></i> Tag Cloud
+            </a>
+            <a href="https://wu-jingcheng.github.io/archives.html">
+                <i class="icon__inbox"></i> Archive
+            </a>
+            <a rel="archive" href="https://wu-jingcheng.github.io/links.html">
+                <i class="icon__link"></i> Friend Links
+            </a>
+            <a rel="alternate" href="https://wu-jingcheng.github.io/rss.xml" rel="section">
+                <i class="icon__rss"></i> RSS
+            </a>
+        </nav>
+
+    </div>
+</header>
+<div class="header__m fn__none">
+    <i class="icon__list fn__none" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list fn__none"></main>
+    <i class="icon__more" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list">
+        <ul>
+            <li>
+                <a href="https://wu-jingcheng.github.io/tags.html" rel="section">
+                    <i class="icon__tags"></i> Tag Cloud
+                </a>
+            </li>
+            <li>
+                <a href="https://wu-jingcheng.github.io/archives.html">
+                    <i class="icon__inbox"></i> Archive
+                </a>
+            </li>
+            <li>
+                <a rel="archive" href="https://wu-jingcheng.github.io/links.html">
+                    <i class="icon__link"></i> Friend Links
+                </a>
+            </li>
+            <li>
+                <a rel="alternate" href="https://wu-jingcheng.github.io/rss.xml" rel="section">
+                    <i class="icon__rss"></i> RSS
+                </a>
+            </li>
+        </ul>
+    </main>
+</div>
+<div class="main" id="pjax">
+    
+    <div class="content">
+        <main id="articlePage">
+            <div class="article-list">
+                <div class="item item--active">
+                    <time class="vditor-tooltipped vditor-tooltipped__n item__date"
+                          aria-label="2020">
+                        07
+                        <span class="item__day">12</span>
+                    </time>
+
+                    <h2 class="item__title">
+                        <a rel="bookmark" href="https://wu-jingcheng.github.io/articles/2020/07/09/1594276428771.html">
+                            NLP/AI Notes
+                        </a>
+                    </h2>
+
+                    <div class="item__date--m fn__none">
+                        <i class="icon__date"></i>
+                        2020-07-12
+                    </div>
+
+                    <div class="ft__center">
+                        <span class="tag">
+                            <i class="icon__tags"></i>
+                            <a rel="tag" href="https://wu-jingcheng.github.io/tags/NLP">
+                                NLP</a>,
+                            <a rel="tag" href="https://wu-jingcheng.github.io/tags/AI">
+                                AI</a>,
+                            <a rel="tag" href="https://wu-jingcheng.github.io/tags/Personal">
+                                Personal</a>,
+                            <a rel="tag" href="https://wu-jingcheng.github.io/tags/Notes">
+                                Notes</a>
+                        </span>
+                            <a class="tag" href="https://wu-jingcheng.github.io/articles/2020/07/09/1594276428771.html#b3logsolocomments">
+                                <i class="icon__comments"></i> <span data-uvstatcmt="1594276428771">0</span> Comment
+                            </a>
+                        <span class="tag">
+                            <i class="icon__views"></i>
+                        <span data-uvstaturl="https://wu-jingcheng.github.io/articles/2020/07/09/1594276428771.html">0</span> View
+                        </span>
+                    </div>
+
+                    <div class="vditor-reset">
+                        <h1 id="toc_h1_0">NLP/AI Notes</h1>
+<p>This article serves as notes for AI or NLP related learning. It can be a starter index to access different materials.</p>
+<h2 id="toc_h2_1">Pytorch</h2>
+<h3 id="toc_h3_2">Getting Started</h3>
+<p><a href="https://colab.research.google.com/drive/1kRTXlwpdXfLMGQgwfud7-YaaHcMrt8BR" target="_blank">pytorch demo</a></p>
+<p><a href="https://colab.research.google.com/drive/19NfeEKaKfyV5tpKhtEqcnmL3Yjwg_xQz" target="_blank">pytorch NN</a></p>
+<p><a href="https://colab.research.google.com/drive/1jtLweSVHEtzllGkZvOvxDzBUB1UbO8sy" target="_blank">pytorch training a classifier (CNN&amp;the like)</a></p>
+<h2 id="toc_h2_3">TensorFlow</h2>
+<p><a href="https://colab.research.google.com/drive/1T23nt3x1yTHeSVKcFGOrOM8JnQAifWAM#scrollTo=x_5WZp66-aUn" target="_blank">tf1.x&amp;tf2.x mnist demo</a></p>
+<p>Looks like the diff is slight if we use keras and operate at a high level.</p>
+<h2 id="toc_h2_4">Concepts Assembly</h2>
+<h3 id="toc_h3_5">SGD</h3>
+<p>Refers to Stochastic Gradient Descent</p>
+<p>the only param is <strong>learning rate</strong>, which is easily understandable.</p>
+<h3 id="toc_h3_6">Adam</h3>
+<p>Adam is derived from adaptive moment estimation. It is basically the combination of two commonly used strategy:</p>
+<ol>
+<li>Adaptive Gradient Algorithm: sets each parameter an individual learning rate.</li>
+<li>RMS Propogation: per-param lr is based on the mean of the recent magnitudes of gradients</li>
+</ol>
+<p>Params: <strong>alpha</strong>, <strong>beta1</strong>, <strong>beta2</strong> and <strong>epsilon:</strong></p>
+<ol>
+<li>alpha: initial learning rate. (0.001 by default)</li>
+<li>beta1: the exponential decay rate for the first moment estimates (mean). (0.99 by default)</li>
+<li>beta2: the exponential decay rate for the second moment estimates (uncentered variance). (0.999 by default)</li>
+<li>epsilon: a very small number to prevent zero divisioin error. (1e-8 by default)</li>
+</ol>
+<h3 id="toc_h3_7">Dropout</h3>
+<p>Dropout is a strategy to prevent over-fitting.</p>
+<p>A fully connected layer covers all parameters and whereby the co-dependency amongst the neurons can curb the their individual power, leading to over-fitting.</p>
+<p>Therefore, dropout silences a fraction <em>p</em> of the neurons during training, and make up for this silence during testing.</p>
+<p>The only parm is the fraction <strong>p</strong>.</p>
+<p><strong>Training Phase</strong></p>
+<p>Ignore a random fraction <em>p</em> of neurons in each layer and of course their activation outputs.</p>
+<p><strong>Testing Phase</strong></p>
+<p>To compensate the drop output of each layer by silencing <em>p</em> of activation outputs, dropout decreases their output by a factor <em>p</em>.</p>
+<h3 id="toc_h3_8">CrossEntropy and NLLLoss (Negative Log Likelihood Loss)</h3>
+<p>In pytorch, CrossEntropyLoss is mainly the same as NLLLoss. But NLLLoss doesn't do the log_softmax automatically. When we use NLLLoss, we need to add log_softmax at the top layer (the last layer namely).</p>
+<p>Then what's cross entropy? Simply put,</p>
+<p>$$<br>
+H(p,q) = -\sum\limits_{\forall x}p(x)log(q(x))<br>
+$$</p>
+<p>In machine learning, we define the loss function base on this:</p>
+<p>$$<br>
+J=-\frac{1}{N}(\sum \limits^N_{i=1}y_i*log(\hat y_i))<br>
+$$</p>
+<p>where, $y$is the ground truth and $\hat y$ is the estimate value.</p>
+<h3 id="toc_h3_9">RNN</h3>
+<p><a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank">ref</a></p>
+<p>RNN refers to recurrent NN. They are networks with loops in them, allowing information to persist. If we unroll it,</p>
+<p><img src="https://b3logfile.com/file/2020/07/image-c912f5a9.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt="image.png"></p>
+<p>The long-term dependency problem: information stored fades out and if we need to fetch context far away, we may fail. In practice, RNNs always fail to handle long-term dependency.</p>
+<h3 id="toc_h3_10">LSTM</h3>
+<p><a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank">ref</a></p>
+<p>LSTM refers to Long Short Term Memory networks. They are explicitly designed to resolve long-term dependency problem. Keeping information for long term is their default behavior, not demanding requirement.</p>
+<p>The repeating patterns in RNNs are always a simple mapping like a tanh function. LSTM have the almost same chain but this linking is way more complicated.</p>
+<p>The core idea is the cell state, which is carefully added or removed with a structure named cell gate. Gate is composed of a sigmoid operation and a bit-wise multiplication.</p>
+<p>Structures inside: <strong>forget gate layer</strong>, <strong>input gate layer&amp;candicate values</strong>, <strong>output layer</strong>.</p>
+<h3 id="toc_h3_11">Viterbi Algorithm</h3>
+<p>In HMM model, this algorighm is computed merely based on the max probability. It is efficient in this way.</p>
+<h3 id="toc_h3_12">Forward Algorithm</h3>
+<p>In HMM model, this algorithm is computed in an overall way--taking all possible pre states into consideration.</p>
+<h3 id="toc_h3_13">Subword algorithms</h3>
+                    </div>
+                </div>
+            </div>
+
+                <div class="module mobile__hidden">
+                    <div class="module__content fn__clear">
+                            <a href="https://wu-jingcheng.github.io/articles/2020/06/29/1593405379989.html" rel="prev" class="fn__left breadcrumb">
+                                Previous: 15513 Malloclab
+                            </a>
+                            <a href="https://wu-jingcheng.github.io/articles/2020/07/12/1594534048569.html" rel="next"
+                               class="fn__right breadcrumb">
+                                Chinese Word Segmentation: Next
+                            </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://wu-jingcheng.github.io/articles/2020/06/29/1593405379989.html" rel="prev" class="breadcrumb">
+                            Previous: 15513 Malloclab
+                        </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://wu-jingcheng.github.io/articles/2020/07/12/1594534048569.html" rel="next"
+                           class="breadcrumb">
+                            Next: Chinese Word Segmentation
+                        </a>
+                    </div>
+                </div>
+                <div id="b3logsolocomments"></div>
+                <div id="vcomment" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"
+                     data-name="WuJingcheng" data-postId="1594276428771"></div>
+
+            <div class="fn__flex article__relevant">
+                <div class="fn__flex-1" id="externalRelevantArticlesWrap">
+                    <div class="module">
+                        <div id="externalRelevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="randomArticlesWrap">
+                    <div class="module">
+                        <div id="randomArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="relevantArticlesWrap">
+                    <div class="module">
+                        <div id="relevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+<aside class="side">
+        <div class="module">
+            <div class="module__list">
+<ul class="article__toc">
+        <li class="toc__h1">
+            <a href="#toc_h1_0">NLP/AI Notes</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_1">Pytorch</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_2">Getting Started</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_3">TensorFlow</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_4">Concepts Assembly</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_5">SGD</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_6">Adam</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_7">Dropout</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_8">CrossEntropy and NLLLoss (Negative Log Likelihood Loss)</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_9">RNN</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_10">LSTM</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_11">Viterbi Algorithm</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_12">Forward Algorithm</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_13">Subword algorithms</a>
+        </li>
+</ul>            </div>
+        </div>
+        <section class="vditor-reset module">
+            <main class="module__content">
+                Incoming student@MSAII, LTI, CMU having one-year deferral.
+            </main>
+        </section>
+
+
+    <div class="module item">
+        <header class="module__header ft__center">
+            WuJingcheng
+        </header>
+        <main class="module__content ft__center">
+            <img class="side__avatar" src="https://b3logfile.com/avatar/1587746221791_1592839616748.jpeg?imageView2/1/w/128/h/128/interlace/0/q/100" alt="WuJingcheng"/>
+            Currently interested in NLP and recommendation system. <br> <br>
+    <a href="https://hacpai.com/member/WuJingcheng"
+       title="https://hacpai.com/member/WuJingcheng"
+       class="user__site"
+       target="_blank" rel="noopener nofollow">
+        <svg viewBox="0 0 32 32" width="100%" height="100%">
+            <path fill="#d23f31" style="fill: var(--color1, #d23f31)" d="M5.787 17.226h17.033l5.954 9.528c0.47 0.752 0.003 1.361-1.042 1.361h-15.141z"></path>
+            <path d="M10.74 3.927h17.033c1.045 0 1.512 0.609 1.042 1.361l-5.954 9.528h-19.872l6.379-10.209c0.235-0.376 0.849-0.681 1.372-0.681z"></path>
+            <path d="M2.953 17.226h2.839l6.804 10.889h-1.892c-0.523 0-1.137-0.305-1.372-0.681z"></path>
+        </svg>
+    </a>
+
+        <a href="https://github.com/Wu-Jingcheng"
+           title="https://github.com/Wu-Jingcheng"
+           class="user__site"
+           target="_blank" rel="noopener nofollow">
+            <svg viewBox="0 0 32 32" width="100%" height="100%">
+                <path d="M16 0.331c-8.836 0-16 7.163-16 16 0 7.069 4.585 13.067 10.942 15.182 0.8 0.148 1.094-0.347 1.094-0.77 0-0.381-0.015-1.642-0.022-2.979-4.452 0.968-5.391-1.888-5.391-1.888-0.728-1.849-1.776-2.341-1.776-2.341-1.452-0.993 0.11-0.973 0.11-0.973 1.606 0.113 2.452 1.649 2.452 1.649 1.427 2.446 3.743 1.739 4.656 1.33 0.143-1.034 0.558-1.74 1.016-2.14-3.554-0.404-7.29-1.777-7.29-7.907 0-1.747 0.625-3.174 1.649-4.295-0.166-0.403-0.714-2.030 0.155-4.234 0 0 1.344-0.43 4.401 1.64 1.276-0.355 2.645-0.532 4.005-0.539 1.359 0.006 2.729 0.184 4.008 0.539 3.054-2.070 4.395-1.64 4.395-1.64 0.871 2.204 0.323 3.831 0.157 4.234 1.026 1.12 1.647 2.548 1.647 4.295 0 6.145-3.743 7.498-7.306 7.895 0.574 0.497 1.085 1.47 1.085 2.963 0 2.141-0.019 3.864-0.019 4.391 0 0.426 0.288 0.925 1.099 0.768 6.354-2.118 10.933-8.113 10.933-15.18 0-8.837-7.164-16-16-16z"></path>
+            </svg>
+        </a>
+
+        </main>
+    </div>
+
+
+        <div class="module item">
+            <header class="module__header">Tags</header>
+            <main class="module__content--three module__content fn__clear">
+                    <a rel="tag"
+                       href="https://wu-jingcheng.github.io/tags/English"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="4 PostsArticle">
+                        English</a>
+                    <a rel="tag"
+                       href="https://wu-jingcheng.github.io/tags/Personal"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="3 PostsArticle">
+                        Personal</a>
+                    <a rel="tag"
+                       href="https://wu-jingcheng.github.io/tags/CMU"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="2 PostsArticle">
+                        CMU</a>
+                    <a rel="tag"
+                       href="https://wu-jingcheng.github.io/tags/15513"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="2 PostsArticle">
+                        15513</a>
+                    <a rel="tag"
+                       href="https://wu-jingcheng.github.io/tags/C"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="2 PostsArticle">
+                        C</a>
+                    <a rel="tag"
+                       href="https://wu-jingcheng.github.io/tags/Chinese"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="2 PostsArticle">
+                        Chinese</a>
+                    <a rel="tag"
+                       href="https://wu-jingcheng.github.io/tags/NLP"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="2 PostsArticle">
+                        NLP</a>
+                    <a rel="tag"
+                       href="https://wu-jingcheng.github.io/tags/AI"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="2 PostsArticle">
+                        AI</a>
+                    <a rel="tag"
+                       href="https://wu-jingcheng.github.io/tags/LeetCode"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="1 PostsArticle">
+                        LeetCode</a>
+                    <a rel="tag"
+                       href="https://wu-jingcheng.github.io/tags/Coding"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="1 PostsArticle">
+                        Coding</a>
+                    <a rel="tag"
+                       href="https://wu-jingcheng.github.io/tags/Java"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="1 PostsArticle">
+                        Java</a>
+                    <a rel="tag"
+                       href="https://wu-jingcheng.github.io/tags/Notes"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="1 PostsArticle">
+                        Notes</a>
+                    <a rel="tag"
+                       href="https://wu-jingcheng.github.io/tags/Project"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="1 PostsArticle">
+                        Project</a>
+            </main>
+        </div>
+
+    <div class="module item">
+        <div class="module__header">
+            <div class="fn__flex">
+                <a href="https://wu-jingcheng.github.io/archives.html" class="fn__flex-1 ft__center">
+                    7
+                    Article
+                </a>
+            </div>
+            <br/>
+            <div class="fn__flex">
+                <div class="fn__flex-1 ft__center">
+                    <span data-uvstaturl="https://wu-jingcheng.github.io">0</span> <span class="ft-gray">View</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+    
+</div>
+</div>
+<div class="icon__up" onclick="Util.goTop()"></div>
+<footer class="footer">
+    &copy; 2020
+    <a href="https://wu-jingcheng.github.io">Jingcheng Wu(吴璟承)</a>
+    wu_jingcheng@qq.com; jingcheng@cmu.edu
+    <div class="fn__none"></div>
+</footer>
+<div class="icon-up" onclick="Util.goTop()"></div>
+
+<script>
+  var Label = {
+    servePath: "https://wu-jingcheng.github.io",
+    staticServePath: "https://wu-jingcheng.github.io",
+    luteAvailable: false,
+    hljsStyle: 'github',
+    langLabel: "en_US",
+    version: "4.1.0",
+    staticSite: true,
+    showCodeBlockLn: false,
+  }
+</script>
+<script type="text/javascript" src="https://wu-jingcheng.github.io/skins/nijigen/js/common.min.js?1594524109972" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+    Util.addScript('https://wu-jingcheng.github.io/js/page.min.js?1594524109972', 'soloPageScript')
+    var page = new Page({
+        "commentContentCannotEmptyLabel": "Sorry, your content must be between 2 and 500 characters long.",
+        "oId": "1594276428771",
+        "blogHost": "https://wu-jingcheng.github.io",
+        "randomArticles1Label": "Random Articles:",
+        "externalRelevantArticles1Label": "External Relevant Articles:"
+    });
+    $(document).ready(function () {
+        page.load();
+    page.tips.externalRelevantArticlesDisplayCount = "0";
+    Skin.initArticle()
+    });
+</script>
+
+</body>
+</html>
+
+<!-- Generated by Latke (https://github.com/88250/latke) in 65ms, 2020/07/12 14:49:51 -->
