@@ -3,10 +3,10 @@
     "theme_color": "#1fb5ad",
     "background_color": "#f1f2f7",
     "display": "standalone",
-    "name": "Jingcheng Wu",
+    "name": "Jingcheng Wu(吴璟承)",
     "start_url": ".",
-    "description": "contact: wu_jingcheng@qq.com",
-    "short_name": "Jingcheng Wu",
+    "description": "Currently interested in NLP and recommendation system.",
+    "short_name": "Jingcheng Wu(吴璟承)",
     "icons": [
         {
             "sizes": "48x48",
