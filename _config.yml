@@ -67,7 +67,7 @@ ba_track_id: c28408a1616f31633ad7b059a8027eb1
 
 # Google统计
 ga_track_id:             # Format: UA-xxxxxx-xx ， 例如作者黄玄的为 'UA-49627206-1'
-ga_domain: EthanTongLIU
+ga_domain: Wu-Jingcheng
 
 
 
@@ -82,7 +82,12 @@ sidebar-about-description: "Knowledge<br>
                             Have solid background in<br>
                             <strong>Machine Learning</strong><br>
                             <strong>Reinforcement Learning</strong><br>
-                            That's all."
+                            <strong>Computer Visions</strong><br>
+                            <strong>Nature Language Processing</strong><br>
+                            <strong>Backend Development</strong><br>
+                            <strong>Full Stack Development</strong><br>
+                            <br>
+                            Impact the world."
 sidebar-avatar: /img/selfie.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
