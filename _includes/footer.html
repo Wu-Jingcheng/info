@@ -280,7 +280,7 @@
     function _render(_hash){
         var _hash = _hash || window.location.hash;
         // en
-        if(_hash == "#en"){
+        if(_hash == "#zh"){
             $select.selectedIndex = 0;
             $en.style.display = "block";
             $en.classList.add("active");
@@ -302,9 +302,9 @@
     // handle select change
     function onLanChange(index){
         if(index == 0){
-            _hash = "#en"
-        }else{
             _hash = "#zh"
+        }else{
+            _hash = "#en"
         }
         _render(_hash)
     }
