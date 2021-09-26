@@ -2,9 +2,9 @@
 title: WU, JINGCHENG
 SEOTitle: Wu, Jingcheng
 header-img: img/home-bg-2.jpg
-email: sunnyliutong@qq.com
-description: "这里是 @刘通 的个人博客"
-keyword: "刘通，LiuTong"
+email: jingchew@cs.cmu.edu
+description: "Wu, Jingcheng's blog"
+keyword: "Wu, Jingcheng"
 url: "https://EthanTongLIU.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -92,14 +92,14 @@ service-worker: true
 
 # Friends
 friends: [
-    {
+    # {
     #     title: "Su",
     #     href: "http://su.gallery/"
     # },{
-        title: "Hux",
-        href: "http://huangxuan.me"
-    },{
-        title: "Tom HU",
-        href: "http://www.bonjour-tom.cn/tom"
-    }
+    #     title: "Hux",
+    #     href: "http://huangxuan.me"
+    # },{
+    #     title: "Tom HU",
+    #     href: "http://www.bonjour-tom.cn/tom"
+    # }
 ]
