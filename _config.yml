@@ -5,7 +5,7 @@ header-img: img/home-bg-2.jpg
 email: jingchew@cs.cmu.edu
 description: "Wu, Jingcheng's blog"
 keyword: "Wu, Jingcheng"
-url: "https://EthanTongLIU.github.io"              # your host, for absolute URL
+url: "https://wu-jingcheng.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
