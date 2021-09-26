@@ -1,25 +1,23 @@
-> You don't need everyone to understand you.
+> We can make the world better.
 
-『Name』 : LIU Tong
+『Name』 : Wu, Jingcheng
 
-『Gender』 : male
+『Nature』 : Male
 
 『Size』 : 173cm/70kg
 
-『Major』 : aeronautics → avionics → signal processing
+『Enchanting』 : Electronic Information Engineering/E-commerce → AI/CS
 
-『School』 : Civil Aviation University of China
+『Manufacturer』 : UESTC → Carnegie Mellon University
 
-『Diploma』 : master
+『Level』 : Master's
 
-『Home』 : Dezhou, Shandong, China
+『Made in』 : Dongguan, Guangdong, China
 
-『Job』 : none
+『Job』 : I will have one:-(
 
-『Nature』 : aquarius, quietness
+『Qualities』 : aquarius, quietness
 
-『Hobby』 : fitness, jogging, movie, music
+『Hobby』 : Coding, video games, exercises, films, musics
 
-『Birth』 : 1996-02-07
-
-You can find me at [Blog](https://EthanTongLIU.me)、[Weibo](https://weibo.com/u/5553584432?is_all=1)、[Zhihu](https://www.zhihu.com/people/liu-tong-35-97/activities)、[Github](http://github.com/EthanTongLIU).
+『Production Date』 : July 8, 1998
