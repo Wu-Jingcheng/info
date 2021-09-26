@@ -1,0 +1,105 @@
+# 站点设置
+title: WU, JINGCHENG
+SEOTitle: Wu, Jingcheng
+header-img: img/home-bg-2.jpg
+email: sunnyliutong@qq.com
+description: "这里是 @刘通 的个人博客"
+keyword: "刘通，LiuTong"
+url: "https://EthanTongLIU.github.io"              # your host, for absolute URL
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+
+
+
+# 社交网站设置
+RSS: false
+# weibo_username:     5553584432
+# zhihu_username:     liu-tong-35-97
+github_username:    Wu-Jingcheng
+# twitter_username:
+#facebook_username:  huxpro
+linkedin_username:  wu-jingcheng
+
+
+
+# 构建设置
+permalink: pretty  # 固定连接
+paginate: 10  # 页数，即每个页面的文章数
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
+
+
+
+# Markdown 设置
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+highlighter: rouge
+kramdown:
+  input: GFM # use Github Flavored Markdown !important
+  syntax_highlighter_opts:
+    default_lang: html;
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+# Disqus评论系统设置
+disqus_username:                      # disqus 国内被墙，暂不启用
+
+# Netease评论系统设置
+netease_comment: true
+
+
+
+# 统计分析设置
+# Baidu统计
+ba_track_id: c28408a1616f31633ad7b059a8027eb1
+
+# Google统计
+ga_track_id:             # Format: UA-xxxxxx-xx ， 例如作者黄玄的为 'UA-49627206-1'
+ga_domain: EthanTongLIU
+
+
+
+# 侧边栏设置
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "面对现实的时候：要争气，不要生气。<br>That's all."
+sidebar-avatar: /img/photo-self.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 0              # A tag will be featured if the size of it is more than this condition value
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+
+# Friends
+friends: [
+    {
+    #     title: "Su",
+    #     href: "http://su.gallery/"
+    # },{
+        title: "Hux",
+        href: "http://huangxuan.me"
+    },{
+        title: "Tom HU",
+        href: "http://www.bonjour-tom.cn/tom"
+    }
+]
